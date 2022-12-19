@@ -1,0 +1,9 @@
+[Unit]
+Description=Service for running basic-flask python file
+After=network.target
+
+[Service]
+Type=idle
+Restart=on-failure
+User=root
+ExecStart=/usr/bin/python3 /home/ec2-user/CFN-Dir/sample-python/basic-flask.py

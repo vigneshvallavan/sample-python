@@ -7,6 +7,7 @@ Type=idle
 Restart=on-failure
 User=root
 ExecStart=/usr/bin/python3 /home/ec2-user/CFN-Dir/sample-python/basic-flask.py
+Restart=/usr/bin/python3 /home/ec2-user/CFN-Dir/sample-python/basic-flask.py
 
 [Install]
 WantedBy=multi-user.target

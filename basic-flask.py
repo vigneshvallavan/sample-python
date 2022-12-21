@@ -4,7 +4,7 @@ import boto3
 import json
 #################
 import sys
-egg_path = '/home/ec2-user/.local/lib/python3.7/site-packages/VLife_Basic_Auth_New-1.0.1-py3.7.egg'
+egg_path = '/home/ec2-user/.local/lib/python3.7/site-packages/VLife_Basic_Auth_New-1.0.2-py3.7.egg'
 sys.path.append(egg_path)
 
 from module1 import mul
@@ -37,16 +37,25 @@ def index():
     
     return transactions
 
-@app.route('/api')
+@app.route('/api', methods=['GET'])
 def api():
-    a = mul.perform(4)
-    b = mul.perform2(4)
+    args = request.args
+    key = args.get("key")
+    a1,b1 = mul.perform(key,4)
+    a2,b2 = mul.perform2(key,4)
 
     return {
-        'Package Name': 'VLife-Basic-Auth-New',
-        'Authentication' : 'Verified',
-        'Function - Perform' : a,
-        'Function - Perform 2' : b
+        'Key': key,
+        'Function Perform':
+        {
+            'Status': a1,
+            'Result': b1
+        },
+        'Function Perform2':
+        {
+            'Status': a2,
+            'Result': b2
+        }
     }
 
 if __name__ == '__main__':

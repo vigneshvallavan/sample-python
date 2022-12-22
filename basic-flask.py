@@ -4,7 +4,7 @@ import boto3
 import json
 #################
 import sys
-egg_path = '/home/ec2-user/.local/lib/python3.7/site-packages/VLife_Basic_Auth_New-1.0.2-py3.7.egg'
+egg_path = '/usr/local/lib/python3.7/site-packages/VLife_Basic_Auth_New-1.0.2-py3.7.egg'
 sys.path.append(egg_path)
 
 from module1 import mul

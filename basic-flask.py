@@ -2,13 +2,13 @@
 from flask import Flask, request
 import boto3
 import json
-#################
+'''
 import sys
 egg_path = '/usr/local/lib/python3.7/site-packages/VLife_Basic_Auth_New-1.0.2-py3.7.egg'
 sys.path.append(egg_path)
-
+'''
 from module1 import mul
-#################
+
 app = Flask(__name__)
 
 s3 = boto3.client(service_name = 's3', region_name = 'us-east-1')

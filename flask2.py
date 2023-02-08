@@ -8,7 +8,7 @@ def index():
     return "Success"   
 
 @app.route("/pathtest")
-def index():
+def pathtest():
     return "Testing Path - completed"   
 
 if __name__ == '__main__':
